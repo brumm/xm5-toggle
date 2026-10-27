@@ -1,0 +1,16 @@
+cmake_minimum_required(VERSION 3.31)
+project(xm5 C CXX OBJCXX)
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_OBJCXX_STANDARD 20)
+
+set(MDR_BUILD_CLIENT OFF CACHE BOOL "" FORCE)
+set(MDR_BUILD_TESTING OFF CACHE BOOL "" FORCE)
+set(MDR_BUILD_SHARED OFF CACHE BOOL "" FORCE)
+set(MDR_BUILD_CODEGEN OFF CACHE BOOL "" FORCE)
+set(MDR_BT_BLE_SUPPORT OFF CACHE BOOL "" FORCE)
+add_subdirectory(../src shc)
+
+add_executable(xm5 xm5.mm)
+target_compile_options(xm5 PRIVATE -fobjc-arc)
+target_link_libraries(xm5 PRIVATE mdr::bt mdr "-framework Foundation" "-framework IOBluetooth")
+target_link_options(xm5 PRIVATE "LINKER:-sectcreate,__TEXT,__info_plist,${CMAKE_CURRENT_SOURCE_DIR}/Info.plist")

@@ -1,0 +1,23 @@
+{
+  "name": "SonyHeadphonesClient - Web Client",
+  "short_name": "SonyHeadphonesClient",
+  "description": "Cross-platform Sony Sound Connect (formerly Headphones Connect) implementation",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#101413",
+  "theme_color": "#101413",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}
